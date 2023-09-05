@@ -4,14 +4,20 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173/"],
+    origin: ["http://localhost:5173"],
   })
 );
 
-app.get("/", (req, res) => {
-  res.send("Welcome Home!!!");
-});
+app.use(express.json());
 
-app.listen(4000, () => {
-  console.log(`server is running on port 4000`);
+require("dotenv").config();
+
+const port = process.env.PORT;
+
+const register = require("./routers/register");
+
+app.use("/register", register);
+
+app.listen(port, () => {
+  console.log(`server is running on  ${port}`);
 });

@@ -1,0 +1,116 @@
+.Register-container {
+  min-width: 310px;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
+.Register-main-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.Register-doctors-img {
+  width: 100%;
+}
+
+.Register-form-container {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 0px 5px #00000050;
+  border-radius: 8px;
+}
+
+.Register-form-header {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0d6efd;
+}
+
+.Register-form-section {
+  margin-bottom: 15px;
+}
+
+.Register-form-label {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #00000090;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.Register-form-input {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  padding: 6px 15px;
+  border-radius: 5px;
+  border: 1px solid #00000050;
+  font-size: 15px;
+  outline: none;
+}
+
+.Register-form-error {
+  color: red;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.Register-btn {
+  border: none;
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 7px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.Login-details {
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  color: #00000090;
+}
+
+.Login-link {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+/* Responsive logic */
+
+@media (min-width: 300px) {
+  .Register-doctors-img {
+    width: 300px;
+  }
+  .Register-form-container {
+    width: 300px;
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .Register-doctors-img {
+    width: 400px;
+  }
+  .Register-main-container {
+    flex-direction: row;
+  }
+  .Register-form-container {
+    width: 350px;
+    padding: 40px 20px;
+    margin-left: 30px;
+  }
+}
