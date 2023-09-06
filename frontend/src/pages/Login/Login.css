@@ -1,4 +1,4 @@
-.Register-container {
+.Login-container {
   min-width: 310px;
   width: 100vw;
   min-height: 100vh;
@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.Register-main-container {
+.Login-main-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -15,29 +15,29 @@
   padding: 20px;
 }
 
-.Register-doctors-img {
+.Login-doctors-img {
   width: 100%;
 }
 
-.Register-form-container {
+.Login-form-container {
   width: 100%;
   padding: 20px;
   box-shadow: 0px 0px 5px #00000050;
   border-radius: 8px;
 }
 
-.Register-form-header {
+.Login-form-header {
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
   color: #0d6efd;
 }
 
-.Register-form-section {
+.Login-form-section {
   margin-bottom: 15px;
 }
 
-.Register-form-label {
+.Login-form-label {
   width: 100%;
   font-size: 15px;
   font-weight: 500;
@@ -46,7 +46,7 @@
   margin-bottom: 10px;
 }
 
-.Register-form-input {
+.Login-form-input {
   margin-top: 10px;
   width: 100%;
   height: 40px;
@@ -57,14 +57,14 @@
   outline: none;
 }
 
-.Register-form-error {
+.Login-form-error {
   color: red;
   font-size: 13px;
   font-weight: 500;
   margin-top: 10px;
 }
 
-.Register-btn {
+.Login-btn {
   border: none;
   background-color: #0d6efd;
   color: #fff;
@@ -75,7 +75,7 @@
   margin-top: 10px;
 }
 
-.Login-details {
+.Register-details {
   align-self: flex-start;
   margin-top: 20px;
   margin-bottom: 0px;
@@ -83,7 +83,7 @@
   color: #00000090;
 }
 
-.Login-link {
+.Register-link {
   text-decoration: none;
   color: #0d6efd;
 }
@@ -91,23 +91,23 @@
 /* Responsive logic */
 
 @media (min-width: 300px) {
-  .Register-doctors-img {
+  .Login-doctors-img {
     width: 300px;
   }
-  .Register-form-container {
+  .Login-form-container {
     width: 300px;
     padding: 40px 20px;
   }
 }
 
 @media (min-width: 768px) {
-  .Register-doctors-img {
+  .Login-doctors-img {
     width: 400px;
   }
-  .Register-main-container {
+  .Login-main-container {
     flex-direction: row;
   }
-  .Register-form-container {
+  .Login-form-container {
     width: 350px;
     padding: 40px 20px;
     margin-left: 30px;

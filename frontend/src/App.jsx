@@ -12,7 +12,7 @@ const App = () => {
             key={route.path}
             path={route.path}
             element={
-              <Suspense fallback={<div>Register Loading....</div>}>
+              <Suspense fallback={<div>{route.name} Loading....</div>}>
                 <route.component />
               </Suspense>
             }
