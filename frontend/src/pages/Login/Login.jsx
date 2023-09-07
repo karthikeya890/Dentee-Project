@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLoginMutation } from "../../api/login";
 import Header from "../../components/Header/Header";
-import doctors from "../../images/doctors.jpg";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -48,7 +47,11 @@ const Login = () => {
     <div className="Login-container">
       <Header />
       <main className="Login-main-container">
-        <img alt="doctors-img" src={doctors} className="Login-doctors-img" />
+        <img
+          alt="doctors-img"
+          src="https://res.cloudinary.com/dcm21aeqp/image/upload/v1692043877/doctors-min_mymjjw.jpg"
+          className="Login-doctors-img"
+        />
         <form className="Login-form-container" onSubmit={onSubmitFormHandler}>
           <h3 className="Login-form-header">Login</h3>
           {emailSectionHandler(email, setEmail, emailError, setEmailError)}

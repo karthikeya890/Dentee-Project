@@ -5,7 +5,8 @@ const api = createApi({
     baseUrl: "http://localhost:4000",
   }),
   reducerPath: "api",
-  endpoints: (build) => ({}),
+  tagTypes: ["doctor"],
+  endpoints: () => ({}),
 });
 
 export default api;

@@ -1,0 +1,299 @@
+.Services-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.Services-main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Services-h1 {
+  color: #0d6efd;
+  margin: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+@media screen and (min-width: 576px) {
+  .Services-h1 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Services-h1 {
+    font-size: 25px;
+  }
+}
+
+.Services-cards {
+  flex-grow: 1;
+  margin: 0px;
+}
+
+/* Manage card */
+
+.Services-manage-card {
+  width: 90%;
+  height: 250px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 0px 8px #0d6efd;
+  transition: transform 0.5s;
+  color: #0d6efd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Services-manage-card:hover {
+  transform: scale(1.05);
+  background-color: #0d6efd;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.Services-manage-icon-container {
+  margin-top: -60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #0d6efd;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Services-manage-icon {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.Click-here-manage-btn {
+  background-color: transparent;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.Services-manage-card:hover .Services-manage-icon-container {
+  background-color: #ffffff;
+  border: 1px solid #0d6efd;
+}
+
+.Services-manage-card:hover .Services-manage-icon {
+  color: #0d6efd;
+}
+
+.Services-manage-card:hover .Click-here-manage-btn {
+  transform: scale(1.05);
+  background-color: #0d6efd;
+  color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #ffffff;
+}
+
+/* Educate card */
+
+.Services-educate-card {
+  width: 90%;
+  height: 250px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 0px 8px #198754;
+  transition: transform 0.5s;
+  color: #198754;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Services-educate-card:hover {
+  transform: scale(1.05);
+  background-color: #198754;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.Services-educate-icon-container {
+  margin-top: -60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #198754;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Services-educate-icon {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.Click-here-educate-btn {
+  background-color: transparent;
+  border: 1px solid #198754;
+  color: #198754;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.Services-educate-card:hover .Services-educate-icon-container {
+  background-color: #ffffff;
+  border: 1px solid #198754;
+}
+
+.Services-educate-card:hover .Services-educate-icon {
+  color: #198754;
+}
+
+.Services-educate-card:hover .Click-here-educate-btn {
+  transform: scale(1.05);
+  background-color: #198754;
+  color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #ffffff;
+}
+
+/* Buy card */
+
+.Services-buy-card {
+  width: 90%;
+  height: 250px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 0px 8px #ffc107;
+  transition: transform 0.5s;
+  color: #ffc107;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Services-buy-card:hover {
+  transform: scale(1.05);
+  background-color: #ffc107;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.Services-buy-icon-container {
+  margin-top: -60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #ffc107;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Services-buy-icon {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.Click-here-buy-btn {
+  background-color: transparent;
+  border: 1px solid #ffc107;
+  color: #ffc107;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.Services-buy-card:hover .Services-buy-icon-container {
+  background-color: #ffffff;
+  border: 1px solid #ffc107;
+}
+
+.Services-buy-card:hover .Services-buy-icon {
+  color: #ffc107;
+}
+
+.Services-buy-card:hover .Click-here-buy-btn {
+  transform: scale(1.05);
+  background-color: #ffc107;
+  color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #ffffff;
+}
+
+/* Discover card */
+
+.Services-discover-card {
+  width: 90%;
+  height: 250px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 0px 8px #dc3545;
+  transition: transform 0.5s;
+  color: #dc3545;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Services-discover-card:hover {
+  transform: scale(1.05);
+  background-color: #dc3545;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.Services-discover-icon-container {
+  margin-top: -60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #dc3545;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Services-discover-icon {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.Click-here-discover-btn {
+  background-color: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.Services-discover-card:hover .Services-discover-icon-container {
+  background-color: #ffffff;
+  border: 1px solid #dc3545;
+}
+
+.Services-discover-card:hover .Services-discover-icon {
+  color: #dc3545;
+}
+
+.Services-discover-card:hover .Click-here-discover-btn {
+  transform: scale(1.05);
+  background-color: #dc3545;
+  color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #ffffff;
+}

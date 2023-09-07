@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
 import routes from "./routes";
+import ProtectedRoute from "./components/Protected-Route/ProtectedRoute";
 import "./App.css";
 
 const App = () => {
@@ -12,9 +13,18 @@ const App = () => {
             key={route.path}
             path={route.path}
             element={
-              <Suspense fallback={<div>{route.name} Loading....</div>}>
-                <route.component />
-              </Suspense>
+              route.protected ? (
+                <ProtectedRoute>
+                  {" "}
+                  <Suspense fallback={<div>{route.name} is Loading...</div>}>
+                    <route.component />
+                  </Suspense>{" "}
+                </ProtectedRoute>
+              ) : (
+                <Suspense fallback={<div>{route.name} is Loading...</div>}>
+                  <route.component />
+                </Suspense>
+              )
             }
           />
         ))}

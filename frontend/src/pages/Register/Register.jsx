@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRegisterMutation } from "../../api/register";
 import Header from "../../components/Header/Header";
-import doctors from "../../images/doctors.jpg";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -45,7 +44,12 @@ const Register = () => {
     <div className="Register-container">
       <Header />
       <main className="Register-main-container">
-        <img alt="doctors-img" src={doctors} className="Register-doctors-img" />
+        <img
+          alt="doctors-img"
+          src="https://res.cloudinary.com/dcm21aeqp/image/upload/v1692043877/doctors-min_mymjjw.jpg"
+          className="Register-doctors-img"
+          loading="lazy"
+        />
         <form
           className="Register-form-container"
           onSubmit={onSubmitFormHandler}
