@@ -34,7 +34,7 @@ const manageCardHandler = () => {
         >
           <p style={{ fontSize: "25px" }}>Manage</p>
           <p>Practice management Software</p>
-          <Link to="/Clinics">
+          <Link to="/clinics">
             <button className="Click-here-manage-btn">
               Click Here &gt;&gt;
             </button>
@@ -58,7 +58,7 @@ const educateCardHandler = () => {
         >
           <p style={{ fontSize: "25px" }}>Educate</p>
           <p>Discover Courses, Conferences</p>
-          <Link to="/Educate">
+          <Link to="/educate">
             <button className="Click-here-educate-btn">
               Click Here &gt;&gt;
             </button>
@@ -82,7 +82,7 @@ const buyCardHandler = () => {
         >
           <p style={{ fontSize: "25px" }}>Buy</p>
           <p>Dental Supplies Online</p>
-          <Link to="/Buy">
+          <Link to="/buy">
             <button className="Click-here-buy-btn">Click Here &gt;&gt;</button>
           </Link>
         </div>
@@ -104,7 +104,7 @@ const discoverCardHandler = () => {
         >
           <p style={{ fontSize: "25px" }}>Discover</p>
           <p>Manage Your Profile</p>
-          <Link to="/Discover">
+          <Link to="/discover">
             <button className="Click-here-discover-btn">
               Click Here &gt;&gt;
             </button>

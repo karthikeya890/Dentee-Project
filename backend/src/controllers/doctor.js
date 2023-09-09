@@ -12,7 +12,11 @@ const doctorDetails = async (req, res) => {
     });
 
     if (response)
-      return res.send({ name: response.name, status: response.status });
+      return res.send({
+        name: response.name,
+        email: response.email,
+        status: response.status,
+      });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

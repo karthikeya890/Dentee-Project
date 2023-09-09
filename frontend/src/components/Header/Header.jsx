@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import api from "../../api/api";
 import Cookies from "js-cookie";
@@ -11,7 +12,9 @@ const Header = () => {
   const location = useLocation();
   const path = location.pathname;
 
-  if (path === "/services") {
+  const paths = ["/services", "/clinics", "/addClinic"];
+
+  if (paths.includes(path)) {
     const { data, isSuccess } = useDoctorQuery();
     const [updateDoctor] = useUpdateDoctorMutation();
     const [dropDown, setDropDown] = useState(false);
@@ -19,7 +22,7 @@ const Header = () => {
     const dispatch = useDispatch();
     return (
       <div className="Header-container">
-        {logoHandler()}
+        <Link to="/services">{logoHandler()}</Link>
         <div className="d-flex">
           {isSuccess && checkInOutHandler(data, updateDoctor)}
           {isSuccess &&
@@ -112,6 +115,9 @@ const profileHandler = (dropDown, setDropDown, dispatch, nagivate) => {
         type="button"
         onClick={() => {
           setDropDown(!dropDown);
+        }}
+        onBlur={() => {
+          setDropDown(false);
         }}
         className="ms-4 Header-profile-btn"
       >

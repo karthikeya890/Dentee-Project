@@ -5,6 +5,8 @@ const Login = lazy(() => import("./pages/Login/Login"));
 const Services = lazy(() => import("./pages/Services/Services"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const Home = lazy(() => import("./pages/Home/Home"));
+const Clinics = lazy(() => import("./pages/Clinics/Clinics"));
+const AddClinic = lazy(() => import("./pages/AddClinic/AddClinic"));
 const routes = [
   {
     path: "/register",
@@ -32,6 +34,16 @@ const routes = [
     path: "*",
     name: "Not Found page",
     component: NotFound,
+  },
+  {
+    path: "/clinics",
+    name: "clinics page",
+    component: Clinics,
+  },
+  {
+    path: "/addClinic",
+    name: "Add clinic page",
+    component: AddClinic,
   },
 ];
 

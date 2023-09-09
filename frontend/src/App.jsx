@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import routes from "./routes";
 import ProtectedRoute from "./components/Protected-Route/ProtectedRoute";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (

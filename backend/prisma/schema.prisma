@@ -19,4 +19,22 @@ model User {
   status    String   @default("INACTIVE") // Options :["ACTIVE", "INACTIVE" , "PENDING", "BANNED"]
   createdAt DateTime
   updatedAt DateTime @default(now())
+  clinics   Clinic[]
+}
+
+model Clinic {
+  id            Int      @id @default(autoincrement())
+  name          String
+  validTill     DateTime
+  country       String
+  state         String
+  city          String
+  zipCode       String
+  timeZone      String
+  address       String
+  defaultClinic Boolean  @default(false)
+  user          User?    @relation(fields: [userId], references: [id])
+  userId        Int?
+  createdAt     DateTime
+  updatedAt     DateTime @default(now())
 }

@@ -1,0 +1,45 @@
+.Clinics-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.Clinics-main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Clinics-h5 {
+  color: #003e8a;
+  margin: 20px;
+}
+
+.Clinics-cards {
+  margin: 0px;
+  flex-grow: 1;
+}
+
+.Clinic-card-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.Clinic-card-active {
+  box-shadow: 0px 0px 4px green;
+  border-radius: 10px;
+  width: 90%;
+  padding: 15px;
+  margin: 30px;
+}
+
+.Clinic-card-inactive {
+  box-shadow: 0px 0px 4px red;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0.5;
+  width: 90%;
+  padding: 15px;
+}
