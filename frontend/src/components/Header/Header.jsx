@@ -12,7 +12,17 @@ const Header = () => {
   const location = useLocation();
   const path = location.pathname;
 
-  const paths = ["/services", "/clinics", "/addClinic"];
+  const paths = [
+    "/services",
+    "/clinics",
+    "/addClinic",
+    "/manage/dashboard",
+    "/manage/accounts",
+    "/manage/administrator",
+    "/manage/appointments",
+    "/manage/patients",
+    "/manage/reports",
+  ];
 
   if (paths.includes(path)) {
     const { data, isSuccess } = useDoctorQuery();

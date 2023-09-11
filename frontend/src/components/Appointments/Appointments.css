@@ -1,0 +1,23 @@
+.Appointments-container {
+  width: 100%;
+  overflow: auto;
+  margin: 0px !important;
+  box-sizing: border-box !important;
+}
+
+.Appointments-calender {
+  overflow-x: auto;
+  padding: 0px !important;
+}
+
+.Appointments-calender-main {
+  font-size: 14px;
+  padding: 10px !important;
+  min-width: 560px;
+}
+
+.event {
+  height: 5px;
+  width: 5px;
+  background-color: red;
+}

@@ -9,26 +9,65 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={
-              route.protected ? (
-                <ProtectedRoute>
-                  {" "}
-                  <Suspense fallback={<div>{route.name} is Loading...</div>}>
-                    <route.component />
-                  </Suspense>{" "}
-                </ProtectedRoute>
-              ) : (
-                <Suspense fallback={<div>{route.name} is Loading...</div>}>
-                  <route.component />
-                </Suspense>
-              )
-            }
-          />
-        ))}
+        {routes.map((route) => {
+          if (!route.childern)
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
+                  route.protected ? (
+                    <ProtectedRoute>
+                      {" "}
+                      <Suspense
+                        fallback={<div>{route.name} is Loading...</div>}
+                      >
+                        <route.component />
+                      </Suspense>{" "}
+                    </ProtectedRoute>
+                  ) : (
+                    <Suspense fallback={<div>{route.name} is Loading...</div>}>
+                      <route.component />
+                    </Suspense>
+                  )
+                }
+              />
+            );
+
+          if (route.childern) {
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
+                  <ProtectedRoute>
+                    {" "}
+                    <Suspense fallback={<div>{route.name} is Loading...</div>}>
+                      <route.component />
+                    </Suspense>{" "}
+                  </ProtectedRoute>
+                }
+              >
+                {route.childern.map((child) => (
+                  <Route
+                    key={child.path}
+                    path={child.path}
+                    element={
+                      <ProtectedRoute>
+                        {" "}
+                        <Suspense
+                          fallback={<div>{child.name} is Loading...</div>}
+                        >
+                          <child.component />
+                        </Suspense>{" "}
+                      </ProtectedRoute>
+                    }
+                  />
+                ))}
+              </Route>
+            );
+          }
+        })}
       </Routes>
     </Router>
   );

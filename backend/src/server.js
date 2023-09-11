@@ -18,6 +18,7 @@ const register = require("./routers/register");
 const login = require("./routers/login");
 const doctor = require("./routers/doctor");
 const clinic = require("./routers/clinic");
+const event = require("./routers/event");
 
 app.use("/register", register);
 
@@ -26,6 +27,8 @@ app.use("/login", login);
 app.use("/doctor", doctor);
 
 app.use("/clinic", clinic);
+
+app.use("/event", event);
 
 app.listen(port, () => {
   console.log(`server is running on  ${port}`);

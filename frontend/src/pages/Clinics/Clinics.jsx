@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import { useClinicsQuery, useAddClinicMutation } from "../../api/clinic";
+import { useClinicsQuery } from "../../api/clinic";
 
 import { Link } from "react-router-dom";
 import { differenceInDays, parseISO, format } from "date-fns";
@@ -45,7 +45,7 @@ const Clinics = () => {
                           : "Clinic-card-active"
                       }
                     >
-                      <Link to="manage/home" className="Clinic-card-link">
+                      <Link to="/manage/dashboard" className="Clinic-card-link">
                         <div>
                           <h6>{item.name}</h6>
                           {daysDifference > 0 && (

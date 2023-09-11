@@ -20,6 +20,7 @@ model User {
   createdAt DateTime
   updatedAt DateTime @default(now())
   clinics   Clinic[]
+  events    Event[]
 }
 
 model Clinic {
@@ -37,4 +38,14 @@ model Clinic {
   userId        Int?
   createdAt     DateTime
   updatedAt     DateTime @default(now())
+}
+
+model Event {
+  id     String  @id
+  title  String
+  start  String
+  end    String
+  allDay Boolean
+  User   User?   @relation(fields: [userId], references: [id])
+  userId Int?
 }

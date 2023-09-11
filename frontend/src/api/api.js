@@ -5,7 +5,7 @@ const api = createApi({
     baseUrl: "http://localhost:4000",
   }),
   reducerPath: "api",
-  tagTypes: ["doctor", "clinics"],
+  tagTypes: ["doctor", "clinics", "events"],
   endpoints: () => ({}),
 });
 
