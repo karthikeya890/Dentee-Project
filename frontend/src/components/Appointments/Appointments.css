@@ -3,21 +3,75 @@
   overflow: auto;
   margin: 0px !important;
   box-sizing: border-box !important;
+  padding: 20px;
 }
 
 .Appointments-calender {
-  overflow-x: auto;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 10px;
   padding: 0px !important;
 }
 
 .Appointments-calender-main {
   font-size: 14px;
   padding: 10px !important;
-  min-width: 560px;
+  flex-grow: 1;
 }
 
-.event {
-  height: 5px;
-  width: 5px;
-  background-color: red;
+.fc-header-toolbar {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .fc-toolbar-chunk {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .fc-toolbar-title {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    width: 100%;
+  }
+}
+
+.calender-offCanvas {
+  color: red !important;
+  top: 79px !important;
+  left: 21px !important;
+  border-top-left-radius: 10px;
+}
+
+.appointments-box {
+  width: 360px;
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .appointments-box {
+    display: flex;
+  }
+  .ant-tabs-nav-wrap {
+    width: 100%;
+  }
+  .ant-tabs-nav-list {
+    width: 100%;
+  }
+  .ant-tabs-tab {
+    margin: 0px !important;
+    padding: 20px 0px !important;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.textField {
+  width: 100% !important;
+}
+
+.ant-tabs-tab {
+  background-color: #6c757d !important;
 }

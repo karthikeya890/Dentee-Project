@@ -2,8 +2,15 @@
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 10px solid #00000015;
-  margin-bottom: 20px;
+  align-items: center;
+}
+
+.Hamburger-btn {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  font-size: 25px;
+  color: #615f5f;
 }
 
 .Header-logo {
@@ -29,51 +36,6 @@
 }
 .Header-profile-icon {
   font-size: 25px;
-}
-
-.drop-down-container {
-  position: absolute;
-  top: 80px;
-  right: 25px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #00000030;
-}
-
-.drop-down-container::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: 12px;
-  height: 15px;
-  width: 15px;
-  background-color: #fff;
-  border: 1px solid #00000030;
-  transform: rotate(45deg);
-  border-bottom: none;
-  border-right: none;
-}
-
-.drop-down-ul {
-  padding: 0px;
-  list-style-type: none;
-  margin-bottom: 0px;
-}
-.drop-down-li {
-  border-bottom: 1px solid #00000015;
-  padding: 10px;
-}
-
-.drop-down-container.active {
-  transform: translateY(0);
-  transition: 0.5s ease;
-}
-
-.drop-down-container.inactive {
-  opacity: 1;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: 0.1s ease;
 }
 
 .logout {

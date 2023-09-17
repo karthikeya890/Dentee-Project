@@ -1,0 +1,12 @@
+.image {
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  border-radius: 100px;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.MuiDataGrid-cell:focus-within {
+  outline: rgb(224, 224, 224) !important;
+}

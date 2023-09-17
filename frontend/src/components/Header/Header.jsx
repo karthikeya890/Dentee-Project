@@ -6,6 +6,9 @@ import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDoctorQuery, useUpdateDoctorMutation } from "../../api/doctor";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Dropdown, Space } from "antd";
+import Navs from "../Navs/Navs";
 import "./Header.css";
 
 const Header = () => {
@@ -30,16 +33,58 @@ const Header = () => {
     const [dropDown, setDropDown] = useState(false);
     const nagivate = useNavigate();
     const dispatch = useDispatch();
-    return (
-      <div className="Header-container">
-        <Link to="/services">{logoHandler()}</Link>
-        <div className="d-flex">
-          {isSuccess && checkInOutHandler(data, updateDoctor)}
-          {isSuccess &&
-            profileHandler(dropDown, setDropDown, dispatch, nagivate)}
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const mainPaths = [
+      "/manage/dashboard",
+      "/manage/accounts",
+      "/manage/administrator",
+      "/manage/appointments",
+      "/manage/patients",
+      "/manage/reports",
+    ];
+
+    if (isSuccess)
+      return (
+        <div className="Header-container">
+          {mainPaths.includes(path) ? (
+            <div>
+              <button onClick={handleShow} className="Hamburger-btn d-lg-none">
+                <i className="fa-solid fa-bars"></i>
+              </button>
+              <Offcanvas
+                style={{ width: "250px" }}
+                show={show}
+                onHide={handleClose}
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>
+                    <Link to="/services">{logoHandler()}</Link>
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Navs />
+                </Offcanvas.Body>
+              </Offcanvas>
+              <Link className="d-none d-lg-inline" to="/services">
+                {logoHandler()}
+              </Link>
+            </div>
+          ) : (
+            <Link to="/services">{logoHandler()}</Link>
+          )}
+
+          <div className="d-flex align-items-center">
+            {isSuccess && checkInOutHandler(data, updateDoctor)}
+            {isSuccess &&
+              profileHandler(dropDown, setDropDown, dispatch, nagivate)}
+          </div>
         </div>
-      </div>
-    );
+      );
   }
 
   return <div className="Header-container">{logoHandler()}</div>;
@@ -60,13 +105,13 @@ const checkInOutHandler = (data, updateDoctor) => {
   const checkOutHandler = () => {
     return (
       <button
-        style={{ width: "120px" }}
+        style={{ width: "100px", height: "40px" }}
         className="check-in-out btn btn-danger"
         onClick={() => {
           updateDoctor({ status: "INACTIVE" });
         }}
       >
-        CheckOut
+        checkOut
       </button>
     );
   };
@@ -74,13 +119,13 @@ const checkInOutHandler = (data, updateDoctor) => {
   const checkInHandler = () => {
     return (
       <button
-        style={{ width: "120px" }}
+        style={{ width: "100px", height: "40px" }}
         className="check-in-out btn btn-success"
         onClick={() => {
           updateDoctor({ status: "ACTIVE" });
         }}
       >
-        CheckIn
+        checkIn
       </button>
     );
   };
@@ -91,50 +136,54 @@ const checkInOutHandler = (data, updateDoctor) => {
 };
 
 const profileHandler = (dropDown, setDropDown, dispatch, nagivate) => {
-  const profileDropDownHandler = () => {
-    const onLogoutHandler = () => {
-      dispatch(api.util.resetApiState());
-      Cookies.remove("jwtToken");
-      nagivate("/login");
-    };
-
-    return (
-      <div
-        className={`drop-down-container ${dropDown ? "active" : "inactive"}`}
-      >
-        <ul className="drop-down-ul">
-          <li className="drop-down-li">
-            <i className="fa-solid fa-pen-to-square me-2"></i> My Profile
-          </li>
-          <li className="drop-down-li">
-            <i className="fa-solid fa-user me-2"></i> Account Settings
-          </li>
-          <li className="drop-down-li logout">
-            <button onClick={onLogoutHandler} className="logout-btn">
-              Logout
-            </button>
-          </li>
-        </ul>
-      </div>
-    );
+  const onLogoutHandler = () => {
+    dispatch(api.util.resetApiState());
+    Cookies.remove("jwtToken");
+    nagivate("/login");
+    console.log("hey");
   };
 
+  const items = [
+    {
+      key: "1",
+      label: (
+        <div className="drop-down-li">
+          <i className="fa-solid fa-pen-to-square me-2"></i> My Profile
+        </div>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <div className="drop-down-li">
+          <i className="fa-solid fa-user me-2"></i> Account Settings
+        </div>
+      ),
+    },
+
+    {
+      key: "3",
+      danger: true,
+      label: (
+        <p onClick={onLogoutHandler} className="m-0 fw-bold text-center">
+          Logout
+        </p>
+      ),
+    },
+  ];
+
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => {
-          setDropDown(!dropDown);
-        }}
-        onBlur={() => {
-          setDropDown(false);
-        }}
-        className="ms-4 Header-profile-btn"
-      >
-        <i className="fa-solid fa-user Header-profile-icon"></i>
-      </button>
-      {profileDropDownHandler()}
-    </>
+    <Dropdown
+      menu={{
+        items,
+      }}
+    >
+      <a onClick={(e) => e.preventDefault()}>
+        <Space className="Header-profile-btn ms-4">
+          <i className="fa-solid fa-user Header-profile-icon"></i>
+        </Space>
+      </a>
+    </Dropdown>
   );
 };
 
